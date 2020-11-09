@@ -1,0 +1,61 @@
+{
+  "name": "certification-classic-27.10.2020",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack serve --config config/webpack.development.js",
+    "build": "cross-env NODE_ENV=production webpack --config config/webpack.production.js",
+    "----------------------------------------------- TEST": "SECTION",
+    "test": "npm run prettier && npm run stylelint && npm run eslint",
+    "test:autofix": "npm run prettier:autofix && npm run stylelint:autofix && npm run eslint:autofix",
+    "----------------------------------------------- TEST-INNER": "SECTION",
+    "prettier": "prettier . --check",
+    "prettier:autofix": "npm run prettier -- --write",
+    "eslint": "eslint . --cache --cache-location ./.cache/.eslintcache",
+    "eslint:autofix": "npm run eslint -- --fix",
+    "stylelint": "stylelint \"./src/sass/**/*.scss\" --allow-empty-input",
+    "stylelint:autofix": "npm run stylelint -- --fix"
+  },
+  "author": {
+    "name": "Igor Petrov",
+    "email": "garik.igor.petrov@gmail.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "autoprefixer": "^10.0.1",
+    "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^6.2.1",
+    "cross-env": "^7.0.2",
+    "css-loader": "^5.0.0",
+    "cssnano": "^4.1.10",
+    "from-cwd": "^1.0.1",
+    "html-webpack-plugin": "^4.5.0",
+    "jquery": "^3.5.1",
+    "microbe-ui": "^2.1.0",
+    "mini-css-extract-plugin": "^1.2.1",
+    "optimize-css-assets-webpack-plugin": "^5.0.4",
+    "postcss": "^8.1.4",
+    "postcss-loader": "^4.0.4",
+    "postcss-preset-env": "^6.7.0",
+    "postcss-sort-media-queries": "^2.1.10",
+    "sass": "^1.27.0",
+    "sass-loader": "^10.0.4",
+    "style-loader": "^2.0.0",
+    "terser-webpack-plugin": "^5.0.2",
+    "webpack": "^5.2.0",
+    "webpack-cli": "^4.1.0",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^5.2.0"
+  },
+  "devDependencies": {
+    "@stripped-ui/eslint-config": "0.0.6-beta.0",
+    "@stripped-ui/stylelint-config-scss": "0.0.9-beta.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.11.0",
+    "prettier": "^2.1.2",
+    "stylelint": "^13.7.2"
+  }
+}

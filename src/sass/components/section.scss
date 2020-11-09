@@ -1,0 +1,51 @@
+@import 'settings/all';
+
+.section {
+	position: relative;
+	z-index: 2;
+	padding: microbe-rem(30) 0;
+
+	&--white {
+		background-color: $background-surface;
+	}
+	.burger-menu {
+		display: none;
+		@media screen and (max-width: 760px) {
+			display: block;
+		}
+	}
+	&__decor {
+		display: block;
+		margin: 0 auto;
+		// position: absolute;
+		margin: 0 auto;
+		width: microbe-rem(280);
+		height: microbe-rem(160);
+		top: microbe-rem(-70);
+		left: 50%;
+		// margin-left: microbe-rem(-140);
+	}
+}
+.pagination {
+	a {
+		margin-left: 10px;
+		margin-left: 10px;
+		padding: 10px;
+		background-color: #fff;
+		color: #000;
+		border-radius: 8px;
+		border: 1px solid #999;
+		text-decoration: none;
+		&.active {
+			background: #999;
+			color: #fff;
+			// pointer-events: none;
+		}
+		&:first-child {
+			margin-left: 0;
+		}
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}

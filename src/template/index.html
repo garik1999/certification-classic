@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width,minimum-scale=1,initial-scale=1,viewport-fit=cover"
+		/>
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title><%= htmlWebpackPlugin.options.title %></title>
+	</head>
+	<body>
+		<div class="header">
+			<div class="container"><%= htmlWebpackPlugin.options.title %></div>
+		</div>
+		<div class="section">
+			<div class="container">
+				<div class="_grid _spacer _spacer--lg">
+					<div class="_cell _cell--12 _md:cell--4 _df:cell--3">
+						<h2>Категории</h2>
+						<div id="menu_sidebar_toggle" class="burger-menu">
+							<svg viewBox="0 0 100 80" width="40" height="40">
+							    <rect width="100" height="20" rx="8"></rect>
+							    <rect y="30" width="100" height="20" rx="8"></rect>
+							    <rect y="60" width="100" height="20" rx="8"></rect>
+							</svg>
+						</div>
+						<form id="filter" class="_owl _owl--df _pt-df">
+							<div class="filter-set">
+								<div class="filter-set__name">Бренд</div>
+								<div class="filter-set__controls">
+									<label class="filter-label">
+										<input item-filter class="form-param" type="checkbox" name="brand" value="eligor" checked>
+										<span>ELIGOR</span>
+									</label>
+									<label class="filter-label">
+										<input item-filter class="form-param" type="checkbox" name="brand" value="msmodels"/>
+										<span>MSMODELS</span>
+									</label>
+									<label class="filter-label">
+										<input item-filter class="form-param" type="checkbox" name="brand" value="schuco" checked>
+										<span>SCHUCO</span>
+									</label>
+								</div>
+							</div>
+							<div class="filter-set">
+								<div class="filter-set__name">
+	                                <label for="year">Год</label>
+	                            </div>
+								<div class="filter-set__controls">
+									<select item-filter id="year" name="yaer" class="select form-param">
+										<option disabled>Выбрать</option>
+
+									</select>
+								</div>
+							</div>
+							<div class="filter-set">
+								<div class="filter-set__name">
+	                                <label for="marka">Производитель</label>
+	                            </div>
+								<div class="filter-set__controls">
+									<select item-filter id="marka" name="marka" class="select form-param">
+										<option disabled>Выбрать</option>
+										<option value="1">Наш автопром</option>
+										<option value="2">V43</option>
+										<option value="3">SSM</option>
+										<option value="4">MATRIX</option>
+										<option value="5">NOREV</option>
+									</select>
+								</div>
+							</div>
+							<div class="filter-set">
+								<div class="filter-set__name">
+									<label for="filter-model">Модель</label>
+								</div>
+								<div class="filter-set__controls">
+									<select
+										item-filter
+										id="filter-model"
+										name="filter-model"
+										class="select form-param"
+									>
+										<option disabled>Выбрать</option>
+										<option value="1">ГАЗ</option>
+										<option value="2">ЗиЛ</option>
+										<option value="3">BMW</option>
+										<option value="4">Mercedes</option>
+										<option value="5">Daimler</option>
+									</select>
+								</div>
+							</div>
+							<div class="filter-set">
+								<div class="filter-set__name">Цена</div>
+								<div class="filter-set__controls">
+									<div class="_grid _grid--2 _spacer _spacer--md">
+										<div class="_cell">
+											<div class="_owl _owl--xs">
+												<label for="price-from">
+													<small>От</small>
+												</label>
+												<input
+													item-filter
+													id="price-from"
+													name="price-from"
+													type="number"
+													class="input _mt-xs form-param"
+													value="0"
+												/>
+											</div>
+										</div>
+										<div class="_cell">
+											<div class="_owl _owl--xs">
+												<label for="price-to">
+													<small>До</small>
+												</label>
+												<input
+													item-filter
+													id="price-to"
+													name="price-to"
+													type="number"
+													class="input _mt-xs form-param"
+													value="0"
+												/>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="_cell _cell--12 _md:cell--8 _df:cell--9">
+						<div class="_owl _owl--df">
+							<div class="_grid _grid--auto _spacer _spacer--md _justify-end">
+								<div class="_cell">
+									<div class="_owl _owl--xs">
+										<label for="sort">
+											<small>Сортировать:</small>
+										</label>
+										<select
+											id="sort"
+											name="sort"
+											class="select form-param"
+											form="filter"
+											sort-card
+										>
+											<option value="1">От дешевых к дорогим</option>
+											<option value="2">От дорогих к дешевым</option>
+											<option value="3">От старых к новым</option>
+											<option value="4">От новых к старым</option>
+										</select>
+									</div>
+								</div>
+								<div class="_cell">
+									<div class="_owl _owl--xs">
+										<label for="per_page">
+											<small>Кол-во элементов на страницу:</small>
+										</label>
+										<select
+											sort-card
+											id="per_page"
+											name="per_page"
+											class="select form-param"
+											form="filter"
+										>
+											<option value="1">6</option>
+											<option value="2">12</option>
+											<option value="3">24</option>
+											<option value="4">60</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div id="cards" class="_grid _spacer _spacer--lg">
+
+							</div>
+							<div id="pagination" class="_grid _justify-center pagination">
+								<a href="#">prev</a>
+								<a href="#" class="page active">1</a>
+								<a href="#" class="page">2</a>
+								<a href="#" class="page">3</a>
+								<a href="#" class="page">4</a>
+								<a href="#" class="page">5</a>
+								<a href="#">next</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section section--white">
+			<img class="section__decor" src="images/car.svg" alt="car">
+			<div class="container">
+				<div class="wysiwyg">
+					<h1>Lorem ipsum dolor sit amet.</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aspernatur est et ex excepturi fugit illo incidunt, laborum minima molestias nostrum numquam, quis rem sed, soluta vero voluptatum? Distinctio enim ex facilis laboriosam magnam modi, nam natus odio placeat quae, quaerat quam recusandae veritatis. Deleniti inventore quia sapiente voluptate voluptatibus?</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, perferendis!</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat necessitatibus sequi tempore tenetur ut vel! Error magni nostrum soluta suscipit temporibus tenetur. A adipisci autem dolores hic illo magnam nemo nihil nisi non, porro quisquam ratione repellat voluptas? Labore, tempora?</p>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+		<template id="card_temp">
+			<div class="card-temp card-cell _cell _cell--12 _sm:cell--6 _md:cell--6 _lg:cell--4">
+				<div class="card">
+					<div class="card__top">
+						<div class="card__brand">ELIGOR</div>
+						<img
+							src="images/model1.jpg"
+							alt="ГАЗ-61 (4х4) (1939) H365"
+							class="card__image"
+						/>
+					</div>
+					<div class="card__bottom">
+						<div
+							class="_grid _justify-between _flex-nowrap _mb-sm"
+						>
+							<div class="_gcell">
+								<div class="card__manufacturer">
+									Наш автопром
+								</div>
+							</div>
+							<div class="_gcell">
+								<div  class="card__year">2000 год</div>
+							</div>
+						</div>
+						<div  class="card__model _mb-sm">
+							ГАЗ-61 (4х4) (1939) H365
+						</div>
+						<div class="_grid _justify-center">
+							<div class="_gcell">
+								<div class="card__price">$200</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</template>
+	</body>
+</html>

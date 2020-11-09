@@ -1,0 +1,14 @@
+@import 'settings/all';
+
+.input {
+	display: block;
+	padding: 0.5rem;
+	width: 100%;
+	font-size: microbe-rem(14);
+	border-radius: 0.25em;
+
+	&:hover {
+		background-color: $background-hover;
+		cursor: pointer;
+	}
+}
